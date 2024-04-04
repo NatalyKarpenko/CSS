@@ -1,0 +1,15 @@
+.numbered-list {
+    margin-top: 25px;
+    list-style-type: none; /* Убираем маркеры списка */
+    padding: 0; /* Убираем отступы */
+}
+
+.numbered-list li {
+    counter-increment: list-counter; /* Увеличиваем счетчик */
+    margin-bottom: 10px; /* Расстояние между элементами списка */
+}
+
+.numbered-list li::before {
+    content: counter(list-counter) "."; /* Добавляем нумерацию элементов */
+    margin-right: 5px; /* Расстояние между номером и текстом элемента */
+}

@@ -1,0 +1,170 @@
+<html>
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-
+    scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+
+<head>
+    <link rel="stylesheet" href="./css/main.css">
+    <title>Селектори CSS3. Детальне керівництво</title>
+</head>
+
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="overlay"></div>
+            <a href="" class="logo">
+                <img src="./img/jpg/logo.png" alt="logo">
+            </a>
+            <nav class="nav">
+                <ul class="list">
+                    <li class="item">
+                        <a class="link" href="./index.html">Головна</a>
+                    </li>
+                    <li class="item">
+                        <a class="link" href="./manual.html">Керівництво</a>
+                    </li>
+                    <li class="item">
+                        <a class="link" href="./FAQ.html">FAQ</a>
+                    </li>
+                </ul>
+            </nav>
+            <button class="join" onclick="window.location.href='./manual.html'">Долучитись</button>
+            <button class="nav-btn">
+                <span class="nav-btn-line"></span>
+                <span class="nav-btn-line"></span>
+                <span class="nav-btn-line"></span>
+            </button>
+        </header>
+        <section id="index" class="home">
+            <div class="section1">
+                <img src="img/jpg/photo1.jpg" alt="">
+            </div>
+            <div class="content">
+                <h1>Селектори CSS3. Детальне керівництво</h1>
+                <p>Детальне керівництво з навчання селекторів CSS3, щоб стати справжнім майстром стилів!</p>
+                <button class="join" onclick="window.location.href='./manual.html'">Почати навчання</button>
+            </div>
+        </section>
+        <section class="about_us">
+            <div class="content">
+                <h2>Про нас</h2>
+                <p>Наша місія - забезпечити доступну та зрозумілу інформацію про селектори CSS3 для всіх зацікавлених
+                    веб-розробників. Ми прагнемо створити середовище, де кожен може навчитися та вдосконалити свої
+                    навички у веб-розробці.</p>
+            </div>
+            <div class="section1">
+                <img src="img/jpg/photo2.jpg" alt="">
+            </div>
+        </section>
+        <section class="feedback">
+            <div class="content">
+                <h2>Відгуки клієнтів</h2>
+            </div>
+            <div class="review-container">
+                <div class="review-card">
+                    <div class="review-content">
+                        <p>Цей сайт допоміг мені розібратися з селекторами CSS3 швидше, ніж я очікував!</p>
+                    </div>
+                    <div class="review-image">
+                        <img src="img/jpg/олександр к..jpeg" alt="Фото">
+                    </div>
+                    <div class="review-author">
+                        <p>Олександр К.</p>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <div class="review-content">
+                        <p>Чудовий ресурс, всі матеріали подані дуже доступно та зрозуміло.</p>
+                    </div>
+                    <div class="review-image">
+                        <img src="img/jpg/ирина п..jpeg" alt="Фото">
+                    </div>
+                    <div class="review-author">
+                        <p>Ірина П.</p>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <div class="review-content">
+                        <p>Завдяки цьому сайту я зміг поглибити свої знання та реалізувати цікаві ідеї.</p>
+                    </div>
+                    <div class="review-image">
+                        <img src="img/jpg/максим с..jpeg" alt="Фото">
+                    </div>
+                    <div class="review-author">
+                        <p>Максим С.</p>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <div class="review-content">
+                        <p>Неймовірно корисний ресурс для тих, хто хоче вивчити селектори CSS3.</p>
+                    </div>
+                    <div class="review-image">
+                        <img src="img/jpg/игорь г..jpeg" alt="Фото">
+                    </div>
+                    <div class="review-author">
+                        <p>Ігор Г.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="feedback-container">
+            <section class="leave_feedback">
+                <div class="feedback-header">
+                    <h2>Зв’яжіться з нами</h2>
+                </div>
+                <form id="feedbackForm">
+                    <div class="input-row">
+                        <input type="text" id="nameInput" placeholder="Ім’я">
+                        <input type="email" id="emailInput" placeholder="Електронна пошта">
+                    </div>
+                    <textarea id="messageInput" placeholder="Повідомлення"></textarea>
+                    <button class="join" type="submit">Надіслати</button>
+                </form>
+                
+            </section>
+
+
+            <div id="modal" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p>Ваше повідомлення відправлено!</p>
+                </div>
+            </div>
+            <section class="contact">
+                <div class="contact-header">
+                    <h2>Контакти</h2>
+                </div>
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <div class="info-item">
+                            <img src="img/jpg/phone.png" alt="Phone Icon">
+                            <p>+380 95 474 75 34</p>
+                        </div>
+                        <div class="info-item">
+                            <img src="img/jpg/email.png" alt="Email Icon">
+                            <p>grafxide@gmail.com</p>
+                        </div>
+                        <div class="info-item">
+                            <img src="img/jpg/city.png" alt="Location Icon">
+                            <p>Харків, Україна</p>
+                        </div>
+                        <div class="info-item">
+                            <img src="img/jpg/time.png" alt="Clock Icon">
+                            <p>Пн-Пт: 9:00 - 17:00</p>
+                        </div>
+                    </div>
+                    <div class="map-photo">
+                        <img src="img/jpg/map.jpg" alt="Map Photo">
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+    <section class="footer">
+        <footer class="footer">
+            <p>Copyright © 2024 Всі права захищені</p>
+        </footer>         
+    </section>
+    <script src="script.js"></script>
+</body>
+
+</html>

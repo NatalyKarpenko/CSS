@@ -1,0 +1,26 @@
+@import "logo.css";
+@import "header.css";
+@import "nav.css";
+@import "container.css";
+@import "home.css";
+@import "about_us.css";
+@import "feedback.css";
+@import "contact-form.css";
+@import "contact.css";
+@import "footer.css";
+
+@import "faq.css";
+
+@import "menu-manual.css";
+@import "section-img.css";
+@import "section-code.css";
+
+@import "section-card.css";
+@import "section-list.css";
+
+@import "content-section.css";
+
+@import "manual-button.css";
+@import "back-to-top.css";
+
+@import "list.css";

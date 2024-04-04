@@ -1,0 +1,12 @@
+.custom-list {
+    list-style-type: disc; /* Изменяем маркер списка на квадрат */
+    margin-top: 30px;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 143%;
+    color: #5C4033;
+    text-align: justify;
+    margin-bottom: 25px;
+    margin-left: 20px;
+  }
+  

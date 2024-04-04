@@ -1,0 +1,103 @@
+.faq-card {
+    width: 1200px; /* Ширина карточки */
+    height: 105px; /* Высота карточки (в начальном состоянии) */
+    border-radius: 5px; /* Закругление углов */
+    overflow: hidden; /* Обрезать содержимое, если оно выходит за пределы карточки */
+    background-color: #EFF7EE;
+    margin-bottom: 30px;
+    margin-top: 30px;
+    overflow: hidden; /* Скрываем содержимое, выходящее за пределы карточки */
+    transition: height 0.3s ease; /* Анимация изменения высоты карточки */
+}
+
+.question {
+    padding: 10px;
+    cursor: pointer;
+    color: #5C4033;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 400;
+    font-size: 30px;
+
+    margin-left: 80px;
+    
+}
+
+.answer {
+    padding: 10px;
+    color: #5C4033;
+    display: none; /* Скрываем ответ по умолчанию */
+    font-weight: 400;
+    font-size: 18px;
+    margin-left: 60px;
+    width: 1036px;
+    text-align: justify;
+}
+
+.arrow {
+    font-size: 60px;
+    margin-right: 20px;
+}
+
+.FAQ  h2 {
+    font-weight: 600;
+    font-size: 35px;
+    line-height: 128%;
+    color: #66273B;
+    margin-bottom: 60px;
+    text-align: center; /* Центрируем текст */
+    display: block;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+
+    .faq-card {
+        width: 720px; /* Ширина карточки */
+        height: 116px; /* Высота карточки (в начальном состоянии) */
+        margin-bottom: 30px;
+        margin-top: 30px;
+    }
+
+    .question {
+        font-size: 25px;  
+        margin-left: 40px;      
+    }
+
+    .answer {
+        font-size: 16px;
+        margin-left: 30px;
+        width: 636px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .faq-card {
+        width: 320px; /* Ширина карточки */
+        height: 200px; /* Высота карточки (в начальном состоянии) */
+        border-radius: 5px; /* Закругление углов */
+        overflow: hidden; /* Обрезать содержимое, если оно выходит за пределы карточки */
+        background-color: #EFF7EE;
+        margin-bottom: 30px;
+        margin-top: 30px;
+        overflow: hidden; /* Скрываем содержимое, выходящее за пределы карточки */
+        transition: height 0.3s ease; /* Анимация изменения высоты карточки */
+    }
+
+    .question {
+        font-size: 25px;  
+        margin-left: 10px;   
+    }
+
+    .answer {
+        font-size: 16px;
+        margin-left: 15px;
+        width: 266px;
+    }
+
+    .arrow {
+        font-size: 30px;
+        margin-right: 5px;
+        margin-top: 15px;
+    }
+}

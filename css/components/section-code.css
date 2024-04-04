@@ -1,0 +1,11 @@
+.language-css {
+    background-color: #d4facf;
+    border-radius: 5px;
+    overflow-x: auto;
+    padding-left: -10px;
+}
+
+.code-wrapper {
+    padding-top: 20px;
+    position: relative;
+}

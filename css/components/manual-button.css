@@ -1,0 +1,60 @@
+.content-section {
+    position: relative; /* Чтобы кнопки были относительно секции */
+    padding-bottom: 80px; /* Добавляем отступ внизу секции для размещения кнопок */
+}
+
+.prevButton {
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+    background-color: #66273B; /* Красный цвет */
+    color: #ffffff; /* Белый цвет текста */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 400;
+    font-size: 20px;
+}
+
+.nextButton {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    background-color: #66273B; /* Зеленый цвет */
+    color: #ffffff; /* Белый цвет текста */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 400;
+    font-size: 20px;
+}
+
+/* Стили для кнопок по умолчанию */
+.prevButton,
+.nextButton {
+    position: absolute;
+    bottom: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 400;
+    background-color: #66273B; /* Зеленый цвет */
+    white-space: nowrap; /* Запрещаем перенос текста */
+    overflow: hidden; /* Скрываем часть текста, которая не помещается */
+    text-overflow: ellipsis; /* Добавляем многоточие, если текст не помещается */
+}
+
+/* Стили для кнопок на мобильных устройствах (ширина экрана меньше 768px) */
+@media screen and (max-width: 767px) {
+    .prevButton,
+    .nextButton {
+        width: calc(50% - 15px); /* Уменьшаем ширину кнопок */
+        padding: 5px 10px; /* Уменьшаем отступы */
+        font-size: 16px; /* Уменьшаем размер шрифта */
+        word-wrap: break-word; /* Разрешаем перенос текста */
+        white-space: normal; /* Устанавливаем обычный режим переноса текста */
+        text-align: center; /* Выравниваем текст по центру */
+    }
+}

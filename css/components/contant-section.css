@@ -1,0 +1,47 @@
+.content-section {
+    display: none; /* Скрываем все секции по умолчанию */
+}
+
+.content-section.active {
+    display: block; /* Показываем активную секцию */
+}
+
+.content-section h2 {
+    font-weight: 600;
+    font-size: 35px;
+    line-height: 128%;
+    color: #66273B;
+    width: 605px;
+    text-align: center; /* Центрируем текст */
+    margin: 0 auto; /* Центрирование по горизонтали */
+}
+
+.content-section p {
+    margin-top: 30px;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 143%;
+    color: #5C4033;
+    text-align: justify;
+    margin-bottom: 25px;
+}
+
+.content-section h3 {
+    margin-top: 30px;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 128%;
+    color: #66273B;
+    width: 605px;
+    margin-bottom: -15px;
+}
+
+.content-section h4 {
+    margin-top: 30px;
+    font-weight: 600;
+    font-size: 25px;
+    line-height: 128%;
+    color: #66273B;
+    width: 605px;
+    margin-bottom: -15px;
+}

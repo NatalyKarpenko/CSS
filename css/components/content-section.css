@@ -1,0 +1,83 @@
+.content-section {
+    display: none; /* Скрываем все секции по умолчанию */
+}
+
+.content-section.active {
+    display: block; /* Показываем активную секцию */
+}
+
+.content-section h2 {
+    font-weight: 600;
+    font-size: 35px;
+    line-height: 128%;
+    color: #66273B;
+    word-wrap: break-word; /* Для поддержки старых браузеров */
+    overflow-wrap: break-word; /* Для современных браузеров */
+    text-align: center; /* Центрируем текст */
+    margin: 0 auto; /* Центрирование по горизонтали */
+}
+
+.content-section p {
+    margin-top: 30px;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 143%;
+    color: #5C4033;
+    text-align: justify;
+    margin-bottom: 25px;
+}
+
+.content-section h3 {
+    margin-top: 30px;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 128%;
+    color: #66273B;
+
+    margin-bottom: -15px;
+}
+
+.content-section h4 {
+    margin-top: 30px;
+    font-weight: 600;
+    font-size: 25px;
+    line-height: 128%;
+    color: #66273B;
+    margin-bottom: -15px;
+    word-wrap: break-word; /* Для поддержки старых браузеров */
+    overflow-wrap: break-word; /* Для современных браузеров */
+}
+
+a {
+    color: #66273B; /* Устанавливаем зеленый цвет для ссылки */
+    font-weight: 600;
+}
+
+/* Дополнительные стили для кнопок навигации */
+.prev-section,
+.next-section {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.prev-section:hover,
+.next-section:hover {
+    background-color: #45a049;
+}
+
+/* Стили для отображения контейнера секций и активной секции */
+.content-section {
+    display: none;
+}
+
+.content-section.active {
+    display: block;
+}
+
+

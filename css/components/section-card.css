@@ -1,0 +1,28 @@
+.card {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: #EFF7EE;
+    margin-top: 25px;
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+}
+
+.card-header img {
+    width: 50px; /* Размер вашей иконки */
+    height: 50px;
+    margin-right: 10px; /* Расстояние между иконкой и заголовком */
+}
+
+.card .card-header h4 {
+    margin: 0px; /* Убираем отступы для заголовка */
+}
+
+.card-body {
+    margin-top: 10px; /* Расстояние между заголовком и текстом */
+}
+

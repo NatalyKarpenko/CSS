@@ -1,0 +1,65 @@
+.about_us {
+    display: flex;
+    align-items: center;
+    margin-top: 100px;
+}
+.about_us .section1 {
+    margin-left: 121px; /* отступ справа от изображения */
+}
+
+.about_us .content h2 {
+    font-weight: 600;
+    font-size: 35px;
+    line-height: 128%;
+    color: #66273B;
+    margin-bottom: 50px;
+    margin-left: 102px;
+}
+
+.about_us .content p {
+    font-size: 20px; /* Размер шрифта абзаца */
+    font-weight: 400;
+    line-height: 143%;
+    color: #5C4033;
+    width: 489px;
+    text-align: justify;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .about_us .section1 {
+        margin-left: 62px; /* отступ справа от изображения */
+    }
+
+    .about_us .content h2 {
+        font-size: 30px;
+        margin-bottom: 26px;
+        margin-left: 62px;
+    }
+
+    .about_us .content p {
+        font-size: 18px; /* Размер шрифта абзаца */
+        width: 308px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .about_us {
+        margin-top: 80px;
+        flex-wrap: wrap;
+    }
+
+    .about_us .content h2 {
+        font-size: 30px;
+        margin-bottom: 20px;
+        margin-left: 27px;
+    }
+
+    .about_us .content p {
+        font-size: 18px; /* Размер шрифта абзаца */
+        width: 320px;
+    }
+
+    .about_us .section1 {
+        margin-left: 0px;
+    }
+}

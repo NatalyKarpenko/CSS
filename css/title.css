@@ -1,0 +1,22 @@
+.h1 {
+    font-weight: 600;
+    font-size: 50px;
+    line-height: 128%;
+    color: #66273B;
+    width: 590px;
+}
+
+.h2 {
+    font-weight: 600;
+    font-size: 35px;
+    line-height: 128%;
+    color: #66273B;
+    width: 151px;
+}
+
+.p {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 143%;
+    color: #5C4033;
+}

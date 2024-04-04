@@ -1,0 +1,1614 @@
+<html>
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-
+    scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+
+<head>
+    <link rel="stylesheet" href="./css/main.css">
+    <title>Селектори CSS3. Детальне керівництво</title>
+</head>
+
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="overlay"></div>
+            <a href="" class="logo">
+                <img src="./img/jpg/logo.png" alt="logo">
+            </a>
+            <nav class="nav">
+                <ul class="list">
+                    <li class="item">
+                        <a class="link" href="./index.html">Головна</a>
+                    </li>
+                    <li class="item">
+                        <a class="link" href="./manual.html">Керівництво</a>
+                    </li>
+                    <li class="item">
+                        <a class="link" href="./FAQ.html">FAQ</a>
+                    </li>
+                </ul>
+            </nav>
+            <button class="join">Долучитись</button>
+            <button class="nav-btn">
+                <span class="nav-btn-line"></span>
+                <span class="nav-btn-line"></span>
+                <span class="nav-btn-line"></span>
+            </button>
+        </header>
+        <section class="menu-manual">
+            <h2>Детальне керівництво</h2>
+            <nav class="secondary-nav">
+                <ul class="secondary-list">
+                    <li class="secondary-item"><a class="secondary-link" href="#" data-section="section1">Введення в
+                            CSS</a></li>
+                    <li class="secondary-item"><a class="secondary-link" href="#" data-section="section2">Селектори</a>
+                    </li>
+                    <li class="secondary-item"><a class="secondary-link" href="#" data-section="section3">Псевдокласи
+                            стану</a></li>
+                    <li class="secondary-item"><a class="secondary-link" href="#" data-section="section4">Робота з
+                            кольором</a></li>
+                    <li class="secondary-item"><a class="secondary-link" href="#" data-section="section5">Каскад
+                            стилей</a></li>
+                    <li class="secondary-item"><a class="secondary-link" href="#" data-section="section6">CSS-змінні</a>
+                    </li>
+                </ul>
+            </nav>
+
+        </section>
+
+        <section id="section1" class="content-section">
+            <h2>Введення в CSS</h2>
+            <p>CSS (Cascading Style Sheets, каскадні таблиці стилей) - це мова для опису і зміни зовньошнього вигляду
+                елементів. HTML використовується для визначення певної структури та семантики вмісту документа, а CSS
+                для його оформлення та позиціонування.</p>
+            <h3>Синтаксис</h3>
+            <p>Блок CSS-коду називається правилом, яке складається з селектора та групи оголошень у фігурних дужках.</p>
+            <div class="image-container">
+                <img src="./img/jpg/example1.jpg" alt="">
+            </div>
+            <p>Селектор вказує браузеру на те, до яких елементів потрібно застосувати стилі цього правила. Кожне
+                оголошення
+                складається з пари властивість: значення; де властивість і його значення поділяються двокрапкою з
+                пробілом і
+                обов'язково закінчуються точкою з комою. Вони описують, що саме потрібно зробити зі стилями елемента.
+            </p>
+            <div class="code-wrapper">
+                <pre id="codeSnippet" class="language-css">
+                    <code>
+        селектор {
+            властивість: значення;
+            властивість: значення;
+            властивість: значення;
+        }
+                    </code>
+                </pre>
+            </div>
+            <h3>Підключення стилей</h3>
+            <p>Є три способи додати стилі до HTML-документу: вбудовані стилі (inline styles), вбудована таблиця стилів
+                (embedded stylesheet) та зовнішня таблиця стилів (external stylesheet). Кожен спосіб має свої переваги,
+                недоліки, обмеження і сферу застосування.
+            </p>
+            <h4>Вбудовані стилі</h4>
+            <p>Вбудовані (інлайн) стилі задаються тегом прямо в атрибуті style. Їх неможливо масштабувати, складно
+                перевизначати та використовувати повторно, тому вони застосовуються в дуже поодиноких випадках.
+                Наприклад, для динамічних стилів, які встановлюються під час виконання JavaScript коду, коли ми
+                заздалегідь не знаємо, яке буде значення властивості.
+            </p>
+            <div class="code-wrapper">
+                <pre id="codeSnippet" class="language-css">
+                    <code>
+        &lt;p style=&quot;color:blue; font-size:24px;&quot;&gt;Этот текст будет синим.&lt;/p&gt;
+                    </code>
+                </pre>
+            </div>
+            <h4>Вбудована таблиця стилів</h4>
+            <p>При такому підході CSS-правила додаються всередину тега &lt;style&gt; у шапці документа. Їх неможливо
+                використовувати повторно на інших сторінках і складно масштабувати та підтримувати.
+            </p>
+            <div class="code-wrapper">
+                <pre id="codeSnippet" class="language-css">
+                    <code>
+        &lt;head&gt;
+        &lt;style type=&quot;text/css&quot;&gt;
+            p {
+                color: blue;
+                font-size: 24px;
+            }
+        &lt;/style&gt;
+        &lt;/head&gt;
+                    </code>
+                </pre>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <img src="img/jpg/info.jpg" alt="Icon">
+                    <h4>Цікаво</h4>
+                </div>
+                <div class="card-body">
+                    <p>Іноді цей підхід використовується для оптимізації швидкості відображення сторінки, додаючи
+                        найважливіші стилі прямо до HTML-документу. Ця просунута техніка називається Critical CSS.
+                    </p>
+                </div>
+            </div>
+
+            <h3>Зовнішня таблиця стилів</h3>
+            <p>При такому підході CSS-правила додаються всередину тега &lt;style&gt; у шапці документа. Їх неможливо
+                використовувати повторно на інших сторінках і складно масштабувати та підтримувати.
+            </p>
+            <div class="code-wrapper">
+                <pre id="codeSnippet" class="language-css">
+                    <code>
+        &lt;head&gt;
+        &lt;link rel=&quot;stylesheet&quot; href=&quot;./css/styles.css&quot;/&gt;
+        &lt;/head&gt;
+                    </code>
+                </pre>
+            </div>
+            <div class="list-container">
+                <ul class="numbered-list">
+                    <li>На одному рівні з index.html створюється папка css, а в ній файл стилів styles.css.
+                    </li>
+                    <li>У тезі &lt;head/&gt;, використовуючи тег &lt;link/&gt;, раніше створений файл підключається.
+                    </li>
+                    <li>В атрибуті href вказується шлях до файлу стилів щодо HTML-документу.
+                    </li>
+                    <li>В атрибуті rel вказується тип документа, що підключається - stylesheet (таблиця стилів).</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <img src="img/jpg/info.jpg" alt="Icon">
+                    <h4>Корисно</h4>
+                </div>
+                <div class="card-body">
+                    <p>Можна підключити скільки завгодно файлів CSS, додаючи для кожного тег &lt;link&gt;.
+                    </p>
+                </div>
+            </div>
+            <button class="prevButton">Попередня сторінка</button>
+            <button class="nextButton">Наступна сторінка</button>
+        </section>
+        <section id="section2" class="content-section">
+            <h2>Селектори</h2>
+            <p>За допомогою різних селекторів можна вибрати один чи групу елементів. Селекторів досить багато, тому
+                розглянемо основні, які можуть застосовуватися щодня.</p>
+            <div class="image-container">
+                <img src="./img/jpg/photo3.png" alt="">
+            </div>
+            <h3>Селектор елемента (тега)</h3>
+            <p>Описує, до якого типу елементів буде застосовано CSS-правило. Селектор елемента недостатньо
+                специфічний для того, щоб стилізувати окремі елементи, тому найчастіше застосовується для оформлення
+                всіх тегів одного типу на сторінці. Наприклад, якщо у всіх посилань у документі потрібно прибрати
+                підкреслення.</p>
+            <div class="code-wrapper">
+                <pre id="codeSnippet" class="language-css">
+                        <code>
+        /* Застосується до всіх абзаців на сторінці */
+        p {
+            font-size: 24px;
+        }
+                            
+        /* Застосується до всіх посилань на сторінці */
+        a {
+            text-decoration: none;
+        }
+                        </code>
+                    </pre>
+            </div>
+            <h3>Селектор класу</h3>
+            <p>Основний селектор у сучасній розробці. Використовується у зв'язку з глобальним атрибутом class. Ім'я
+                класу задається тільки англійською мовою, і це обов'язково іменник, що описує, що це за елемент. Для
+                поповнення словникового запасу використовуйте <a
+                    href="https://github.com/yoksel/common-words">довідник</a>, <a
+                    href="https://github.com/web-standards-ru/dictionary/blob/main/dictionary.md">словник термінів</a>
+                та <a
+                    href="https://github.com/nicothin/idiomatic-pre-CSS/blob/gh-pages/words_and_abbreviations.md">скорочення</a>.
+            </p>
+            <div class="code-wrapper">
+                <pre id="codeSnippet" class="language-css">
+                        <code>
+        &lt;h1 class="title"&gt;Привіт, я Mango.&lt;/h1&gt;
+        &lt;p class="text"&gt;
+            Ласкаво просимо на мою особисту сторінку. Тут можна подивитись
+            &lt;a class="link" href=""&gt;проєкти&lt;/a&gt;.
+        &lt;/p&gt;
+                        </code>
+                    </pre>
+            </div>
+            <p>У CSS використовується селектор класу, щоб встановити стилі для одного і більше елементів з однаковим
+                значенням атрибута class (ім'ям класу). У селекторі перед ім'ям класу ставиться точка ..
+            </p>
+            <div class="code-wrapper">
+                <pre id="codeSnippet" class="language-css">
+                        <code>
+        /* Застосується до всіх тегів з класом title */
+        .title {
+            font-weight: 500;
+        }
+                            
+        /* Застосується до всіх тегів з класом text */
+        .text {
+            color: brown;
+            font-size: 18px;
+        }
+                            
+        /* Застосується до всіх тегів з класом link */
+        .link {
+            text-decoration: none;
+        }
+                        </code>
+                    </pre>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <img src="img/jpg/info.jpg" alt="Icon">
+                    <h4>Увага</h4>
+                </div>
+                <div class="card-body">
+                    <p>В імені класу використовуються лише маленькі літери та тире. Наприклад, list, list-item,
+                        logo-image і т. д. Підкреслення list_item, великі літери ListItem або цифри listitem27
+                        вважаються поганим тоном.
+                    </p>
+                </div>
+            </div>
+            <h4>Композиція класів</h4>
+            <p>У елемента може бути кілька класів, тоді вони записуються через пропуск.
+            </p>
+            <div class="code-wrapper">
+                <pre id="codeSnippet" class="language-css">
+                        <code>
+        &lt;element class="value1 value2 value3"&gt;&lt;/element&gt;
+                        </code>
+                    </pre>
+            </div>
+            <div class="image-container">
+                <img src="./img/jpg/photo4.png" alt="">
+            </div>
+            <p>Це можна використовувати для комбінування та повторного використання стилів. Створимо розмітку та стилі
+                для компонента оповіщень.
+            </p>
+            <div class="code-wrapper">
+                <pre id="codeSnippet" class="language-css">
+                        <code>
+        &lt;p class="alert success"&gt;Поповнення рахунку виконано&lt;/p&gt;
+        &lt;p class="alert warning"&gt;Увага, будуть змінені тарифи&lt;/p&gt;
+        &lt;p class="alert error"&gt;Помилка проведення транзакції&lt;/p&gt;
+                        </code>
+                    </pre>
+            </div>
+            <p>У стилях описуємо кілька правил, загальні всім сповіщень і специфічні кожного типу.
+            </p>
+            <div class="code-wrapper">
+                <pre id="codeSnippet" class="language-css">
+                        <code>
+        /* Загальні стилі для всіх типів сповіщень */
+        .alert {
+            font-size: 24px;
+            font-weight: 500;
+        }
+                            
+        /* Специфічні стилі для кожного типу */
+        .success {
+            color: green;
+        }
+                            
+        .warning {
+            color: orange;
+        }
+                            
+        .error {
+            color: red;
+        }
+                        </code>
+                    </pre>
+            </div>
+            <h3>Селектор ідентифікатора</h3>
+            <p>Як і з класом, теги можна задавати глобальний атрибут id. Відмінність у тому, що значення id має бути
+                унікальним на сторінці, тобто не може бути два елементи з однаковими значеннями ідентифікатора.
+            </p>
+            <div class="code-wrapper">
+                <pre id="codeSnippet" class="language-css">
+                        <code>
+        &lt;h1 id="title"&gt;Заголовок сторінки&lt;/h1&gt;
+                        </code>
+                    </pre>
+            </div>
+            <p>В CSS-селекторі, перед ім'я ідентифікатора, ставиться символ решітки #.</p>
+            <div class="code-wrapper">
+                <pre id="codeSnippet" class="language-css">
+                        <code>
+        #title {
+            font-weight: 500;
+            color: orange;
+        }
+                        </code>
+                    </pre>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <img src="img/jpg/info.jpg" alt="Icon">
+                    <h4>Корисно</h4>
+                </div>
+                <div class="card-body">
+                    <p>Не використовуйте ідентифікатори для оформлення. Правило унікальності значення унеможливлює
+                        повторне використання стилів. Ідентифікатори призначені для «якорів».
+                    </p>
+                </div>
+            </div>
+            <h3>Селектор нащадка</h3>
+            <p>Селектор нащадка, або контекстний селектор, застосовує стилі до дітей та нащадків елемента за будь-якої
+                глибини вкладеності.
+            </p>
+            <div class="code-wrapper">
+                <pre id="codeSnippet" class="language-css">
+                    <code>
+        &lt;a href=""&gt;Читайте наш блог!&lt;/a&gt;
+
+        &lt;ul class="social-links"&gt;
+            &lt;li&gt;
+                &lt;a href=""&gt;Twitter&lt;/a&gt;
+            &lt;/li&gt;
+            &lt;li&gt;
+                &lt;a href=""&gt;Instagram&lt;/a&gt;
+            &lt;/li&gt;
+            &lt;li&gt;
+                &lt;a href=""&gt;Facebook&lt;/a&gt;
+            &lt;/li&gt;
+        &lt;/ul&gt;
+                    </code>
+                </pre>
+            </div>
+            <p>Наприклад, замість того, щоб задавати стиль усім посиланням, потрібно змінити стилі тільки тих, які
+                знаходяться всередині списку з класом social-links.
+            </p>
+            <div class="code-wrapper">
+                <pre id="codeSnippet" class="language-css">
+                    <code>
+        /* ❌ Застосується до всіх посилань в документі */
+        a {
+            color: blue;
+            text-decoration: none;
+        }
+                            
+        /* ✅ Застосується тільки до посилань, які лежать всередині тега з класом social-links */
+        .social-links a {
+            color: blue;
+            text-decoration: none;
+        }
+                    </code>
+                </pre>
+            </div>
+            <h3>Селектор дитини</h3>
+            <p>Ще один розповсюджений селектор, який дозволяє обрати тільки безпосередню дитину всередині
+                батьківського елемента. Використаємо розмітку для магаторівневого меню магазину, в якому необхідно
+                стилізувати теги &lt;li&gt; у списку з класом menu, але не submenu.</p>
+            <div class="code-wrapper">
+                <pre id="codeSnippet" class="language-css">
+                    <code>
+        &lt;ul class="menu"&gt;
+            &lt;li&gt;
+                Комп'ютери та комплектуючі
+                &lt;ul class="submenu"&gt;
+                    &lt;li&gt;Процессоры&lt;/li&gt;
+                    &lt;li&gt;Мониторы&lt;/li&gt;
+                    &lt;li&gt;Видеокарты&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/li&gt;
+            &lt;li&gt;
+                Побутова техніка
+                &lt;ul class="submenu"&gt;
+                    &lt;li&gt;Холодильники&lt;/li&gt;
+                    &lt;li&gt;Телевізори&lt;/li&gt;
+                    &lt;li&gt;Пральні машини&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/li&gt;
+            &lt;li&gt;
+                Товари для дому
+                &lt;ul class="submenu"&gt;
+                    &lt;li&gt;Крісла&lt;/li&gt;
+                    &lt;li&gt;Матраци&lt;/li&gt;
+                    &lt;li&gt;Електрокаміни&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/li&gt;
+        &lt;/ul&gt; 
+                    </code>
+                </pre>
+            </div>
+            <p>Якщо використовувати селектор нащадка (контекстний), то CSS-правило застосується до всіх тегів
+                &lt;li&gt;, і
+                червона рамка буде у кожного.</p>
+            <div class="code-wrapper">
+                <pre id="codeSnippet" class="language-css">
+                    <code>
+        /* ❌ Не вирішує задачу */
+        .menu li {
+            border: 1px solid tomato;
+        }                
+                    </code>
+                </pre>
+            </div>
+            <p>Селектор дитини допомагає вирішити цю проблему, обравши тільки ті &lt;li&gt;, які є дітьми списку
+                ul.menu.</p>
+            <div class="code-wrapper">
+                <pre id="codeSnippet" class="language-css">
+                    <code>
+        /* ✅ Те що треба */
+        .menu > li {
+            border: 1px solid tomato;
+        }                
+                    </code>
+                </pre>
+            </div>
+            <h3>Селектор атрибута</h3>
+            <p>Дозволяє застосувати стилі до елементів із певним атрибутом або його значенням.
+            </p>
+            <h4>елемент[атрибут]</h4>
+            <p>Застосує стилі до всіх елементів, які мають вказаний атрибут.
+            </p>
+            <div class="code-wrapper">
+                <pre id="codeSnippet" class="language-css">
+                    <code>
+        &lt;a href="https://htmlreference.io" title="Довідник тегів"&gt;
+            htmlreference.io
+        &lt;/a&gt;
+                          
+        &lt;a href="https://cssreference.io" title="Довідник стилей"&gt;
+            cssreference.io
+        &lt;/a&gt;
+                          
+        &lt;a href="https://www.youtube.com">YouTube &lt;/a&gt;          
+                    </code>
+                </pre>
+            </div>
+            <p>Обере всі посилання з атрибутом title.</p>
+            <div class="code-wrapper">
+                <pre id="codeSnippet" class="language-css">
+                    <code>
+        a[title] {
+            color:teal;
+        }          
+                    </code>
+                </pre>
+            </div>
+            <h4>елемент[атрибут="значення"]</h4>
+            <p>Застосує стилі до всіх елементів, у яких є атрибут з вказаним значенням.</p>
+            <div class="code-wrapper">
+                <pre id="codeSnippet" class="language-css">
+                    <code>
+        &lt;a href="https://htmlreference.io" title="Довідник тегів"&gt;
+            htmlreference.io
+        &lt;/a&gt;
+                          
+        &lt;a href="https://cssreference.io" title="Довідник стилей"&gt;
+            cssreference.io
+        &lt;/a&gt;
+                          
+        &lt;a href="https://www.youtube.com">YouTube &lt;/a&gt;          
+                    </code>
+                </pre>
+            </div>
+            <p>Обере всі посилання з атрибутом href і відповідним значенням.</p>
+            <div class="code-wrapper">
+                <pre id="codeSnippet" class="language-css">
+                    <code>
+        /* Незвичне форматування фігурних дужок це нормально */
+        a[href="https://htmlreference.io"]
+        {
+            color: teal;
+        }
+                        
+        a[href="https://cssreference.io"]
+        {
+            color: orange;
+        }
+                        
+        a[href="https://www.youtube.com"]
+        {
+            color: tomato;
+        }        
+                    </code>
+                </pre>
+            </div>
+            <button class="prevButton">Попередня сторінка</button>
+            <button class="nextButton">Наступна сторінка</button>
+
+        </section>
+        <section id="section3" class="content-section">
+            <h2>Псевдокласи стану</h2>
+            <p>Селектори стану використовуються для застосування стилей до інтерактивних елементів при певній події,
+                наприклад наведення курсора на посилання або фокусування з клавіатурі.</p>
+
+            <p>Псевдоклас визначає конкретний стан елемента та прикріплений до селектора тегу, класу і т.д. Пробіла між
+                селектором та псевдокласом немає, щоб показати, що вони пов'язані один з одним. Якщо додати пробіл, то
+                псевдоклас застосується до всіх елементів в документі.</p>
+            <div class="code-wrapper">
+                <pre id="codeSnippet" class="language-css">
+                    <code>
+        селектор:псевдоклас {
+            /* Властивість */
+        } 
+                    </code>
+                </pre>
+            </div>
+            <h3>Псевдоклас :hover</h3>
+            <p>Активується коли курсор миші знаходиться у межах елемента, наприклад при наведенні миші на посилання або
+                будь-який інший елемент.</p>
+            <div class="code-wrapper">
+                <pre id="codeSnippet" class="language-css">
+                    <code>
+        &lt;p&gt; 
+            Чудову шпаргалку по тегам можна знайти
+            &lt;a class="link" href="https://htmlreference.io"&gt; по ссылке&lt;/a&gt;
+        &lt;/p&gt;       
+                    </code>
+                </pre>
+            </div>
+            <p>Додамо посиланню базовий стиль та стиль при наведенні.</p>
+            <div class="code-wrapper">
+                <pre id="codeSnippet" class="language-css">
+                    <code>
+        .link {
+            color: teal;
+        }
+                          
+        .link:hover {
+            color: tomato;
+        }       
+                    </code>
+                </pre>
+            </div>
+            <p>Псевдокласи можна застосовувати до будь-яких селекторів, в тому ж числі контекстних.</p>
+            <div class="code-wrapper">
+                <pre id="codeSnippet" class="language-css">
+                    <code>
+        &lt;ul class="social-links"&gt;
+            &lt;li&gt;&lt;a class="link" href="https://twitter.com"&gt;Twitter&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a class="link" href="https://www.instagram.com"&gt;Instagram&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a class="link" href="https://www.facebook.com">Facebook&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;       
+                    </code>
+                </pre>
+            </div>
+            <p>Додамо посиланню всередні списку базовий стиль та стиль при наведенні.</p>
+            <div class="code-wrapper">
+                <pre id="codeSnippet" class="language-css">
+                    <code>
+        .social-links .link {
+            color: teal;
+        }
+                          
+        .social-links .link:hover {
+            color: tomato;
+        }       
+                    </code>
+                </pre>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <img src="img/jpg/info.jpg" alt="Icon">
+                    <h4>Корисно</h4>
+                </div>
+                <div class="card-body">
+                    <p>Такий селектор читається як "При ховері по елементам з класом link, які знаходяться всередині
+                        елементів з класом social-links". Тобто читаються селектори справа наліво.
+                    </p>
+                </div>
+            </div>
+            <h3>Псевдоклас :focus</h3>
+            <p>Активується коли інтерактивний елемент &#40;посилання, кнопка, поле форми&#41; отримує фокус при
+                навігації по сторінці клавіатурою &#40;клавішею Tab&#41;.</p>
+            <div class="code-wrapper">
+                <pre id="codeSnippet" class="language-css">
+                        <code>
+        &lt;ul class="social-links"&gt;
+            &lt;li&gt;&lt;a class="link" href="https://twitter.com"&gt;Twitter&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a class="link" href="https://www.instagram.com"&gt;Instagram&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a class="link" href="https://www.facebook.com">Facebook&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;       
+                    </code>
+                </pre>
+            </div>
+            <p>Додамо посиланню всередині списку базовий стиль та стиль при фокусі.</p>
+            <div class="code-wrapper">
+                <pre id="codeSnippet" class="language-css">
+                        <code>
+        .social-links .link {
+            color: teal;
+        }
+                              
+        .social-links .link:focus {
+            color: orange;
+        }      
+                    </code>
+                </pre>
+            </div>
+            <p>Для того, щоб врахувати наведення та фокусування, варто стилізувати одразу обидка стани. Це робиться
+                простим перерахуванням селекторів.</p>
+            <div class="code-wrapper">
+                <pre id="codeSnippet" class="language-css">
+                    <code>
+        .social-links .link {
+            color: teal;
+        }
+                                  
+        /* Два та більше селекторів відокремлюються комою */
+        .social-links .link:hover,
+        .social-links .link:focus {
+            color: orange;
+        }     
+                    </code>
+                </pre>
+            </div>
+            <h3>Псевдоклас :active</h3>
+            <p>Відбувається при активації елемента. Наприклад, посилання стає активним, якщо навести на неї курсор та
+                клацнути мишкою. Не дивлячись на те, що активним може стати практично будь-який елемент, псевдоклас
+                :active використовується в основному для посилань та кнопок.</p>
+            <div class="code-wrapper">
+                <pre id="codeSnippet" class="language-css">
+                    <code>
+        &lt;ul class="social-links"&gt;
+            &lt;li&gt;&lt;a class="link" href="https://twitter.com"&gt;Twitter&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a class="link" href="https://www.instagram.com"&gt;Instagram&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a class="link" href="https://www.facebook.com">Facebook&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;       
+                    </code>
+                </pre>
+            </div>
+            <div class="code-wrapper">
+                <pre id="codeSnippet" class="language-css">
+                    <code>
+        .social-links .link {
+            color: teal;
+        }
+                          
+        .social-links .link:hover,
+        .social-links .link:focus {
+            color: orange;
+        }
+                          
+        .social-links .link:active {
+            color: red;
+        }       
+                    </code>
+                </pre>
+            </div>
+            <h3>Псевдоклас :visited</h3>
+            <p>Цей псевдоклас активується на посиланнях, які вже були відвідані. За замовчуванням посилання
+                відображаються синім та при відвідуванні стають фіолетовими.
+            </p>
+            <div class="code-wrapper">
+                <pre id="codeSnippet" class="language-css">
+                    <code>
+        &lt;ul class="social-links"&gt;
+            &lt;li&gt;&lt;a class="link" href="https://twitter.com"&gt;Twitter&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a class="link" href="https://www.instagram.com"&gt;Instagram&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a class="link" href="https://www.facebook.com">Facebook&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;       
+                    </code>
+                </pre>
+            </div>
+            <div class="code-wrapper">
+                <pre id="codeSnippet" class="language-css">
+                    <code>
+        .social-links .link {
+            color: teal;
+        }
+                          
+        .social-links .link:hover,
+        .social-links .link:focus {
+            color: orange;
+        }
+                          
+        .social-links .link:active {
+            color: red;
+        }
+                          
+        .social-links .link:visited {
+            color: green;
+        }       
+                    </code>
+                </pre>
+            </div>
+            <h3>Ховер і таблиці</h3>
+            <p>Псевдоклас :hover не обов'язково повинен застосовуватися до посилань, його можна додавати і к іншим
+                елементам документам. Наприклад, до рядків та ячеек таблиці, щоб вони змінювали колір фону при наведенні
+                курсора миші.</p>
+            <div class="code-wrapper">
+                <pre id="codeSnippet" class="language-css">
+                    <code>
+        &lt;table class="schedule"&gt;
+            &lt;thead&gt;
+                &lt;tr&gt;
+                    &lt;th&gt;Номер&lt;/th&gt;
+                    &lt;th&gt;Маршрут&lt;/th&gt;
+                    &lt;th&gt;Время в пути&lt;/th&gt;
+                &lt;/tr&gt;
+            &lt;/thead&gt;
+            &lt;tbody class="schedule-body"&gt;
+                &lt;tr&gt;
+                    &lt;td&gt;433&lt;/td&gt;
+                    &lt;td&gt;Киев - Ковель&lt;/td&gt;
+                    &lt;td&gt;5 часов&lt;/td&gt;
+                &lt;/tr&gt;
+                &lt;tr&gt;
+                    &lt;td&gt;701&lt;/td&gt;
+                    &lt;td&gt;Харьков - Днепр&lt;/td&gt;
+                    &lt;td&gt;7 часов&lt;/td&gt;
+                &lt;/tr&gt;
+                &lt;tr&gt;
+                    &lt;td&gt;258&lt;/td&gt;
+                    &lt;td&gt;Львов - Одесса&lt;/td&gt;
+                    &lt;td&gt;4 часа&lt;/td&gt;
+                &lt;/tr&gt;
+            &lt;/tbody&gt;
+        &lt;/table&gt;                 
+                    </code>
+                </pre>
+            </div>
+            <p>Додамо базове оформлення таблиці та стилі для ховера по рядкам.</p>
+            <div class="code-wrapper">
+                <pre id="codeSnippet" class="language-css">
+                    <code>
+        .schedule-body > tr:hover {
+            background-color: tomato;
+            color: white;
+        }
+                          
+        /* Оформлення таблиці */
+        .schedule {
+            border-collapse: collapse;
+        }
+                          
+        .schedule th,
+        .schedule td {
+            padding: 8px;
+            border: 1px solid #212121;
+        }                 
+                    </code>
+                </pre>
+            </div>
+            <h3>Властивість cursor</h3>
+            <p>Встановлює тип вказівника миші, коли він знаходиться в межах елемента. Вид курсора залежить від
+                операційної системи та її налаштувань. Змінювати тип курсора просто так погана ідея, це тільки заплутає
+                користувача, коли замість звичної руки або лупи він побачить щось інше. В більшості випадків краще
+                залишити все як є.</p>
+            <button class="prevButton">Попередня сторінка</button>
+            <button class="nextButton">Наступна сторінка</button>
+        </section>
+        <section id="section4" class="content-section">
+            <h2>Робота з кольором</h2>
+            <h3>Колір тексту</h3>
+            <p>За допомогою властивості color можна змінити колір тексту елемента. Сучасні браузери підтримують декілька
+                основних способів опису кольору: ключові слова, rgb і hex.</p>
+            <div class="code-wrapper">
+                <pre id="codeSnippet" class="language-css">
+                    <code>
+        &lt;p class="text"&gt;
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati commodi,
+            veritatis nihil alias iste odit similique sit eius optio veniam, impedit
+            cumque fuga facere labore quo id necessitatibus quaerat rerum.
+        &lt;/p&gt;             
+                    </code>
+                </pre>
+            </div>
+            <div class="code-wrapper">
+                <pre id="codeSnippet" class="language-css">
+                    <code>
+        .text {
+            color: tomato;
+        };             
+                    </code>
+                </pre>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <img src="img/jpg/info.jpg" alt="Icon">
+                    <h4>Корисно</h4>
+                </div>
+                <div class="card-body">
+                    <p>На сервисі htmlcolorcodes.com можна подивитись значення кольорів у різних форматах.</p>
+                </div>
+            </div>
+            <h3>Колір фону</h3>
+            <p>Властивість background-color дозволяє змінити колір фона елемента.</p>
+            <div class="code-wrapper">
+                <pre id="codeSnippet" class="language-css">
+                    <code>
+        &lt;p class="text"&gt;
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati commodi,
+            veritatis nihil alias iste odit similique sit eius optio veniam, impedit
+            cumque fuga facere labore quo id necessitatibus quaerat rerum.
+        &lt;/p&gt;             
+                    </code>
+                </pre>
+            </div>
+            <div class="code-wrapper">
+                <pre id="codeSnippet" class="language-css">
+                    <code>
+        .text {
+            background-color: tomato;
+            color: white;
+        }            
+                    </code>
+                </pre>
+            </div>
+            <h3>Іменовані кольори</h3>
+            <p>Для опису кольору в стилях можна використовувати <a href="https://htmlcolorcodes.com/color-names/">набір
+                    зарезервованих слів</a>. У сучасній веб-розробці вони вже не використовуються, але бувають корисними
+                якщо треба швидко поставити якийсь колір.</p>
+            <div class="code-wrapper">
+                <pre id="codeSnippet" class="language-css">
+                    <code>
+        p {
+            color: tomato;
+        }           
+                    </code>
+                </pre>
+            </div>
+            <h3>RGB</h3>
+            <p>Є три основні кольори: червоний, зелений та синій. Змішуючи їх у різноманітних пропорціях можна отримати
+                будь-який колір.</p>
+            <div class="image-container">
+                <img src="./img/jpg/example2.png" alt="">
+            </div>
+            <p>У цьому форматі для задання значення використовується функція rgb(), в якій вказується доля кожного з
+                трьох основних кольорів, після чого вони змішуються та виходить потрібний колір.</p>
+            <div class="code-wrapper">
+                <pre id="codeSnippet" class="language-css">
+                        <code>
+        rgb(червоний, зелений, синій)           
+                        </code>
+                    </pre>
+            </div>
+            <p>Дапазон значень можна вказувати числами від 0 (повна відсутність кольору) до 255 (максимальна доля). Це
+                основний спосіб задання RGB-кольору.</p>
+            <div class="code-wrapper">
+                <pre id="codeSnippet" class="language-css">
+                    <code>
+        /* Чистий червоний колір: 255 червоного, 0 зеленого, 0 синього */
+        p {
+            color: rgb(255, 0, 0);
+        }         
+                    </code>
+                </pre>
+            </div>
+            <p>Або відсотками від 0% до 100%.</p>
+            <div class="code-wrapper">
+                <pre id="codeSnippet" class="language-css">
+                    <code>
+        /* Чистий червоний колір: 100% червоного, 0% зеленого, 0% синього */
+        p {
+            color: rgb(100%, 0%, 0%);
+        }        
+                    </code>
+                </pre>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <img src="img/jpg/info.jpg" alt="Icon">
+                    <h4>Увага</h4>
+                </div>
+                <div class="card-body">
+                    <p>Запам'ятовувати комбінації RGB-значень не потрібно, всі кольори є в макеті від дизайнера.</p>
+                </div>
+            </div>
+            <h3>Hexzdecimal</h3>
+            <p>Це опис кольору оснований на записі числа в шістнадцятиричній системи числення. Доля кожного з трьох
+                кольорів описується двома цифрами.</p>
+            <div class="image-container">
+                <img src="./img/jpg/example3.jpg" alt="">
+            </div>
+            <p>В якості цифр цієї системи числення використовується набір цифр від 0 до 9 та латинські літери від А до F
+                в нижньому та верхньому регістрі.</p>
+            <div class="code-wrapper">
+                <pre id="codeSnippet" class="language-css">
+                        <code>
+        /* Чистий чрвоний колір: ff (100%) червоного, 00 (0%) зеленого, 00 (0%) синього */
+        p {
+            color: #ff0000;
+        }
+                            
+        /* Чистий зелений колір: 00 (0%) червоного, ff (100%) зеленого, 00 (0%) синього */
+        p {
+            color: #00ff00;
+        }
+                            
+        /* Чистий синій колір: 00 (0%) червоного, 00 (0%) зеленого, ff (100%) синього */
+        p {
+            color: #0000ff;
+        }       
+                        </code>
+                    </pre>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <img src="img/jpg/info.jpg" alt="Icon">
+                    <h4>Увага</h4>
+                </div>
+                <div class="card-body">
+                    <p>Запам'ятовувати комбінації HEX-значень не потрібно, всі кольори є в макеті від дизайнера.</p>
+                </div>
+            </div>
+            <h3>Прозорість кольору</h3>
+            <p>Основний спосіб додавання прозорості кольору це функція rgba(). На відміну від rgb() ще додається
+                прозорість (альфа канал).</p>
+            <div class="code-wrapper">
+                <pre id="codeSnippet" class="language-css">
+                            <code>
+        rgba(червоний, зелений, синій, альфа)      
+                            </code>
+                        </pre>
+            </div>
+            <p>Найчастіше прозорість задається числом від 0 (прозорий) до 1 (непрозорий).</p>
+            <div class="code-wrapper">
+                <pre id="codeSnippet" class="language-css">
+                        <code>
+        /* Чистий червоний колір з прозорістю в 30% */
+        p {
+            background-color: rgba(255, 0, 0, 0.3);
+        } 
+                        </code>
+                    </pre>
+            </div>
+            <p>Але можна й відсотками від 0% (прозорий) до 100% (не прозорий).</p>
+            <div class="code-wrapper">
+                <pre id="codeSnippet" class="language-css">
+                        <code>
+        /* Чистий червоний колір з прозорістю в 30% */
+        p {
+            background-color: rgba(100%, 0%, 0%, 30%);
+        } 
+                        </code>
+                    </pre>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <img src="img/jpg/info.jpg" alt="Icon">
+                    <h4>Цікаво</h4>
+                </div>
+                <div class="card-body">
+                    <p>Прозорість кольору можна задати й у <a
+                            href="https://gist.github.com/lopspower/03fb1cc0ac9f32ef38f4">Hex-форматі</a>, але через
+                        складність такого запису та запам'ятовування значень, завжди використовують функцію rgba().</p>
+                </div>
+            </div>
+            <button class="prevButton">Попередня сторінка</button>
+            <button class="nextButton">Наступна сторінка</button>
+        </section>
+        <section id="section5" class="content-section">
+            <h2>Каскад стилей</h2>
+            <p>Каскадування - це механізм, який керує кінцевими значеннями властивостей елемента, якщо до нього
+                застосовується декілька CSS-правил.</p>
+            <ul class="custom-list">
+                <li>Якщо до елемента застосовується декілька правил, їх властивості комбінуються.</li>
+                <li>Якщо в правилах є однакові властивості з різними значеннями, то вони конфліктують.</li>
+            </ul>
+            <div class="code-wrapper">
+                <pre id="codeSnippet" class="language-css">
+                        <code>
+        /* Яким буде колір тексту абзаців? */
+        p {
+            color: blue;
+            background-color: orange;
+        }
+                            
+        p {
+            color: teal;
+        } 
+                        </code>
+                    </pre>
+            </div>
+            <p>Для того, щоб зібрати фінальні стилі елемента та розв'язати конфлікти значень властивостей, браузер
+                використовує два механізма: специфічність та наслідування.</p>
+            <h3>Специфічність селекторів</h3>
+            <p>Для кожного CSS-правила браузер вираховує специфічність (вагу) селектора. Якщо до елемента потрібно
+                застосувати властивості з різних правил, та є конфліктуючі (однакові) властивості, використовується
+                значення властивості з правила з найбільш високою специфічністю селектора.</p>
+            <p>Значення специфічності складається з чотирьох рангів, важливість яких збільшується справа на ліво.</p>
+            <div class="image-container">
+                <img src="./img/jpg/example4.svg" alt="">
+            </div>
+            <h4>Селектори 4 рангу</h4>
+            <p>Кожний селектор елемента та псевдоелемента додає одиницю в четвертий ранг.</p>
+            <div class="code-wrapper">
+                <pre id="codeSnippet" class="language-css">
+                    <code>
+        &lt;article&gt;
+            &lt;h1&gt;Lorem ipsum dolor sit amet&lt;/h1&gt;
+            &lt;p&gt;
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati commodi,
+                veritatis nihil alias iste odit similique sit eius optio veniam, impedit
+                cumque fuga facere labore quo id necessitatibus quaerat rerum.
+            &lt;/p&gt;
+            &lt;a href=""&gt;Читати далі...&lt;/a&gt;
+        &lt;/article&gt;        
+                    </code>
+                </pre>
+            </div>
+            <p>Колір тексту абзацу буде помаранчевим, тому що специфічність другого правила вища.</p>
+            <div class="code-wrapper">
+                <pre id="codeSnippet" class="language-css">
+                    <code>
+        /* Специфічність - 0 0 0 1 */
+        p {
+            color: green;
+        }
+                        
+        /* ✅ Специфічність - 0 0 0 2 */
+        article > p {
+            color: orange;
+        }
+                    </code>
+                </pre>
+            </div>
+            <h4>Селектори 3 рангу</h4>
+            <p>Кожен селектор класу, атрибуту та псевдокласу додає одиницю в третій ранг.</p>
+            <div class="code-wrapper">
+                <pre id="codeSnippet" class="language-css">
+                    <code>
+        &lt;article class="post"&gt;
+            &lt;h1 class="post-title"&gt;Lorem ipsum dolor sit amet&lt;/h1&gt;
+            &lt;p&gt;
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati commodi,
+                veritatis nihil alias iste odit similique sit eius optio veniam, impedit
+                cumque fuga facere labore quo id necessitatibus quaerat rerum.
+            &lt;/p&gt;
+            &lt;a href="" class="post-link"&gt;Читати далі...&lt;/a&gt;
+        &lt;/article&gt;        
+                    </code>
+                </pre>
+            </div>
+            <p>Колір тексту заголовка буде помаранчевим, тому що специфічність третього правила вища.</p>
+            <div class="code-wrapper">
+                <pre id="codeSnippet" class="language-css">
+                    <code>
+        /* Специфічність - 0 0 1 0 */
+        .post-title {
+            color: green;
+        }
+            
+        /* Специфічність - 0 0 1 1 */
+        .post > h1 {
+            color: red;
+        }
+            
+        /* ✅ Специфічність - 0 0 2 0 */
+        .post > .post-title {
+            color: orange;
+        }
+                    </code>
+                </pre>
+            </div>
+            <p>Колір тексту посилання буде коричневим, тому що специфічність п'ятого правила вища.</p>
+            <div class="code-wrapper">
+                <pre id="codeSnippet" class="language-css">
+                    <code>
+        /* Специфічність - 0 0 0 1 */
+        a {
+            color: green;
+        }
+                        
+        /* Специфічність - 0 0 1 0 */
+        .post-link {
+            color: orange;
+        }
+                        
+        /* Специфічність - 0 0 1 1 */
+        a.post-link {
+            color: blue;
+        }
+                        
+        /* Специфічність - 0 0 2 0 */
+        .post > .post-link {
+            color: red;
+        }
+                        
+        /* ✅ Специфічність - 0 0 2 1 */
+        .post > a.post-link {
+            color: brown;
+        }
+                    </code>
+                </pre>
+            </div>
+            <h4>Селектори 2 рангу</h4>
+            <p>Кожен селектор ідентифікатора додає одиницю до другого рангу.</p>
+            <div class="code-wrapper">
+                <pre id="codeSnippet" class="language-css">
+                    <code>
+        &lt;article class="post"&gt;
+            &lt;h1 class="post-title id="title""&gt;Lorem ipsum dolor sit amet&lt;/h1&gt;
+            &lt;p&gt;
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati commodi,
+                veritatis nihil alias iste odit similique sit eius optio veniam, impedit
+                cumque fuga facere labore quo id necessitatibus quaerat rerum.
+            &lt;/p&gt;
+            &lt;a href="" class="post-link"&gt;Читати далі...&lt;/a&gt;
+        &lt;/article&gt;        
+                    </code>
+                </pre>
+            </div>
+            <p>Колір тексту заголовку буде помаранчевим, тому що специфічність другого правила вища.</p>
+            <div class="code-wrapper">
+                <pre id="codeSnippet" class="language-css">
+                    <code>
+        /* Специфічність - 0 0 1 0 */
+        .post-title {
+            color: green;
+        }
+                        
+        /* ✅ Специфічність - 0 1 0 0 */
+        #title {
+            color: orange;
+        }        
+                    </code>
+                </pre>
+            </div>
+            <h4>Селектори 1 рангу</h4>
+            <p>Вбудовані стилі додають одиницю в перший ранг, мають найвищу специфічність, та перевизначити їх через CSS
+                неможливо.</p>
+            <div class="code-wrapper">
+                <pre id="codeSnippet" class="language-css">
+                    <code>
+        &lt;!-- Специфичность такого стиля - 1 0 0 0 --&gt;
+        &lt;p style="color: green;"&gt;
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati commodi,
+            veritatis nihil alias iste odit similique sit eius optio veniam, impedit
+            cumque fuga facere labore quo id necessitatibus quaerat rerum.
+        &lt;/p&gt;    
+                    </code>
+                </pre>
+            </div>
+            <h4>Однакова специфічність</h4>
+            <p>Якщо специфічність однакова, перемагає правило розташоване нижче у коді.</p>
+            <div class="code-wrapper">
+                <pre id="codeSnippet" class="language-css">
+                    <code>
+        /* Три селектора елементу з одинаковою специфічністю */
+        a {
+            color: teal;
+        }
+                        
+        a {
+            color: brown;
+        }
+                        
+        /* Так як це правило стоїть нижче, до всіх посилань застосується ораневий */
+        a {
+            color: orange;
+        }    
+                    </code>
+                </pre>
+            </div>
+            <p4>Уникаємо специфічності</p4>
+            <p>Якщо селектор виглядає як A > B > C + X Y, варто замислитись. Чим простіший селектор, тим менше проблем
+                із специфічностю. Вважайте за правило використовувати селектори класу. Атрибут class не тільки допомагає
+                уникнути проблем із специфічністю, але й покращує читабельність HTML-розмітки.</p>
+            <p>Перший підхід це присвоєння класу загальному батьківському блоку та використання дочірніх селекторів та
+                селекторів нащадка.</p>
+            <div class="code-wrapper">
+                <pre id="codeSnippet" class="language-css">
+                    <code>
+            &lt;article class="post"&gt;
+                &lt;h1&gt;Lorem ipsum dolor sit amet&lt;/h1&gt;
+                    &lt;p&gt;
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati commodi,
+                        veritatis nihil alias iste odit similique sit eius optio veniam, impedit
+                        cumque fuga facere labore quo id necessitatibus quaerat rerum.
+                    &lt;/p&gt;
+                &lt;a href=""&gt;Читати далі...&lt;/a&gt;
+            &lt;/article&gt;        
+                    </code>
+                </pre>
+            </div>
+            <p>Такий CSS гарно працює коли розмітка проста. Але при зростанні важкості розмітки блоку, зручна стилізація
+                по селекторам тегу стає неможливою. Наприклад, якщо у пості буде 5 посилань, а не одне, точково обрати
+                якесь посилання не вийде або селектор буде надто важким.</p>
+            <div class="code-wrapper">
+                <pre id="codeSnippet" class="language-css">
+                    <code>
+            .post {
+                /* Стилі статі */
+            }
+                          
+            .post > h1 {
+                /* Стилі заголовку */
+            }
+                          
+            .post > p {
+                /* Стилі тексту */
+            }
+                          
+            .post > a {
+                /* Стилі посилання */
+            }
+                          
+            .post > a:hover {
+                /* Стилі посилання при ховері */
+            }        
+                    </code>
+                </pre>
+            </div>
+            <p>Другий підхід це додавання класів опису до батьківського та тегів всередині нього.</p>
+            <div class="code-wrapper">
+                <pre id="codeSnippet" class="language-css">
+                    <code>
+            &lt;article class="post"&gt;
+                &lt;h1 class="title"&gt;Lorem ipsum dolor sit amet&lt;/h1&gt;
+                &lt;p class="text"&gt;
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati commodi,
+                    veritatis nihil alias iste odit similique sit eius optio veniam, impedit
+                    cumque fuga facere labore quo id necessitatibus quaerat rerum.
+                &lt;/p&gt;
+                &lt;a class="link" href=""&gt;Читати далі...&lt;/a&gt;
+            &lt;/article&gt;        
+                    </code>
+                </pre>
+            </div>
+            <p>Такий CSS непогано масштабується та підтримується. Це відправна точка для написання хорошого CSS. Тим не
+                менш з зростанням важкості розмітки можуть бути невеликі проблеми зі специфічністю.</p>
+            <div class="code-wrapper">
+                <pre id="codeSnippet" class="language-css">
+                        <code>
+            .post {
+                /* Стилі статі */
+            }
+                              
+            .post > .title {
+                /* Стилі заголовка */
+            }
+                              
+            .post > .text {
+                /* Стилі тексту */
+            }
+                              
+            .post > .link {
+                /* Стилі посилання */
+            }
+                              
+            .post > .link:hover {
+                /* Стилі посилання при ховері */
+            }        
+                        </code>
+                    </pre>
+            </div>
+            <p>Третій підход полягає в заданні дуже специфічних класів батьківському блоку та кожному тегу всередині
+                нього за принципом ім'я_батька-ім'я_дитини.</p>
+            <div class="code-wrapper">
+                <pre id="codeSnippet" class="language-css">
+                        <code>
+            &lt;article class="post"&gt;
+                &lt;h1 class="post-title"&gt;Lorem ipsum dolor sit amet&lt;/h1&gt;
+                &lt;p class="post-text"&gt;
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati commodi,
+                    veritatis nihil alias iste odit similique sit eius optio veniam, impedit
+                    cumque fuga facere labore quo id necessitatibus quaerat rerum.
+                &lt;/p&gt;
+                &lt;a href="" class="post-link"&gt;Читати далі...&lt;/a&gt;
+            &lt;/article&gt;        
+                        </code>
+                    </pre>
+            </div>
+            <p>При цьому підході використовуються прості селектори класу, не треба думати про специфічність. Такий CSS
+                гарно масштабується та підтримується. У сучасній розробці при написанні стилей використовуються варіації
+                цього підхода.</p>
+            <div class="code-wrapper">
+                <pre id="codeSnippet" class="language-css">
+                            <code>
+            .post {
+                /* Стилі статі */
+            }
+                                  
+            .post-title {
+                /* Стилі заголовка */
+            }
+                                  
+            .post-text {
+                /* Стилі тексту */
+            }
+                                  
+            .post-link {
+                /* Стилі посилання */
+            }
+                                  
+            .post-link:hover {
+                /* Стилі посилання при ховері */
+            }        
+                            </code>
+                        </pre>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <img src="img/jpg/info.jpg" alt="Icon">
+                    <h4>Корисно</h4>
+                </div>
+                <div class="card-body">
+                    <p>Не варто обмежувати себе у виборі лише одного підходу. Усі три методи іменвання розмітки класами
+                        та написання стилів можна використовувати разом, в залежності від ситуації.</p>
+                </div>
+            </div>
+            <h3>Наслідування властивостей</h3>
+            <p>Генетичне успадкування звично бачити у житті. Наприклад, у високих батьків найчастіше високі діти, часто
+                передається колір волосся тощо. Щось подібне є й у CSS. Якщо встановити зелений колір тексту батькові,
+                то якщо будь-яке правило не перевизначить це значення, колір тексту всіх його нащадків також буде
+                зеленим.
+            </p>
+            <p>Спадкування це механізм, з якого значення певних якостей передаються від предка до його нащадкам.
+                Успадковуються, переважно, властивості оформлення тексту, наприклад, колір. Це зручно, тому що не
+                потрібно ставити повторювані стилі для кожного нащадка окремо.
+            </p>
+            <div class="code-wrapper">
+                <pre id="codeSnippet" class="language-css">
+                        <code>
+            &lt;article class="post"&gt;
+                &lt;h1&gt;Популярное за этот месяц&lt;/h1&gt;
+                &lt;p&gt;
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati commodi,
+                    veritatis nihil alias iste odit similique sit eius optio veniam, impedit
+                    cumque fuga facere labore quo id necessitatibus quaerat rerum.
+                &lt;/p&gt;
+                &lt;a href=""&gt;Читати далі...&lt;/a&gt;
+            &lt;/article&gt;        
+                        </code>
+                    </pre>
+            </div>
+            <p>Зробимо весь текст поста зеленого кольору.</p>
+            <div class="code-wrapper">
+                <pre id="codeSnippet" class="language-css">
+                        <code>
+            .post {
+                color: green;
+            }      
+                        </code>
+                    </pre>
+            </div>
+            <p>У інструментах розробника на вкладці Styles у самому низу побачимо успадкування для абзацу та заголовка.
+            </p>
+            <div class="image-container">
+                <img src="./img/jpg/example5.png" alt="">
+            </div>
+            <p>У житті не всі атрибути батьків передаються дітям. Те саме і в CSS, не кожна властивість по
+                замовчуванням успадковується нащадками. Фактично, якби всі властивості були успадковані, ефект був би
+                аналогічним до відсутності успадкування взагалі, і довелося б написати дуже багато CSS для скидання
+                стилів успадкованих від батька, щоб перевизначити цю поведінку.
+            </p>
+            <h4>Виключення</h4>
+            <p>Не всі елементи наслідують значення властивостей від нащадків. Наприклад, посилання не наслідує колір
+                тексту.</p>
+            <div class="code-wrapper">
+                <pre id="codeSnippet" class="language-css">
+                            <code>
+            &lt;article class="post"&gt;
+                &lt;h1&gt;Популярное за этот месяц&lt;/h1&gt;
+                &lt;p&gt;
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati commodi,
+                    veritatis nihil alias iste odit similique sit eius optio veniam, impedit
+                    cumque fuga facere labore quo id necessitatibus quaerat rerum.
+                &lt;/p&gt;
+                &lt;a href="" class="post-link"&gt;Читати далі...&lt;/a&gt;
+            &lt;/article&gt;        
+                            </code>
+                        </pre>
+            </div>
+            <p>Якщо необхідно, щоб у пості вона була такого ж кольору, як і весь текст, можна використовувати спеціальне
+                значення inherit для властивості color, щоб не дублювати колір у двох місцях.
+            </p>
+            <div class="code-wrapper">
+                <pre id="codeSnippet" class="language-css">
+                        <code>
+            .post {
+                color: green;
+            }
+                                  
+            .post-link {
+                color: inherit;
+            }      
+                    </code>
+                </pre>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <img src="img/jpg/info.jpg" alt="Icon">
+                    <h4>Корисно</h4>
+                </div>
+                <div class="card-body">
+                    <p>Значення inherit говорить браузеру у тому, що необхідно успадкувати значення властивості від
+                        предка. Для кольору краще використовувати значення currentColor (поточний колір).
+                    </p>
+                </div>
+            </div>
+            <h4>Колір тексту сторінки</h4>
+            <p>Щоб задати базовий (домінантний) колір тексту всього документа, створюємо правило для тега &lt;body&gt; і
+                додаємо властивість color. Цей колір буде успадковано всім текстовим контентом, крім посилань.
+            </p>
+            <div class="code-wrapper">
+                <pre id="codeSnippet" class="language-css">
+                        <code>
+            body {
+                color: #2a2a2a;
+            }     
+                    </code>
+                </pre>
+            </div>
+            <button class="prevButton">Попередня сторінка</button>
+            <button class="nextButton">Наступна сторінка</button>
+        </section>
+        <section id="section6" class="content-section">
+            <h2>CSS-змінні</h2>
+            <p>Властивості користувача (CSS Custom Properties), також відомі як CSS-змінні - це контейнери для значень,
+                визначені в CSS-документі з метою повторного використання. CSS-змінні спрощують використання та зміну
+                повторюваних значень у файлі стилів. Вони підтримуються браузером і не вимагають ніяких додаткових
+                інструментів.
+            </p>
+            <div class="code-wrapper">
+                <pre id="codeSnippet" class="language-css">
+                        <code>
+                &lt;section class="section"&gt;
+                    &lt;h1 class="section-title"&gt;Section title&lt;/h1&gt;
+                &lt;/section&gt;  
+                    </code>
+                </pre>
+            </div>
+            <div class="code-wrapper">
+                <pre id="codeSnippet" class="language-css">
+                        <code>
+            .section {
+                /* Інші стилі */
+                border: 2px solid #3f51b5;
+            }
+                              
+            .section-title {
+                /* Інші стилі */
+                color: #3f51b5;
+            }
+                              
+            .section-title::before {
+                /* Інші стилі */
+                background-color: #3f51b5;
+            }
+                    </code>
+                </pre>
+            </div>
+            <p>У наведеному прикладі значення #3f51b5 зустрічається тричі. Припустимо це головний колір бренду, який
+                постійно використовується на різних сторінках сайту. Якщо зміниться колір бренду, нам потрібно буде
+                скрізь замінити це значення, а у великому проекті це можуть бути сотні місць. Найкраще, що ми зможемо
+                зробити - використовувати пошук та заміну.
+            </p>
+            <h3>Оголошення змінної</h3>
+            <p>На допомогу приходять CSS-змінні. Ім'я змінної чутливе до регістру і може містити латинські літери,
+                цифри, підкреслення та тире. Створимо змінну --brand-color для зберігання кольору бренду (#3f51b5) і
+                використовуватимемо її.
+            </p>
+            <div class="code-wrapper">
+                <pre id="codeSnippet" class="language-css">
+                        <code>
+            :root {
+                --brand-color: #3f51b5;
+            }
+                    </code>
+                </pre>
+            </div>
+            <p>Глобальні змінні, що доступні в будь-якому іншому правилі, визначаються в селекторі :root - більш
+                специфічному селекторі елемента <html>. Оголошення змінної починається з подвійного дефісу - за яким
+                слідує її ім'я в довільній нотації. Наприклад, brand-color або brandColor - це валідні імена змінної,
+                головне, щоб усі змінні в проекті були в однаковій нотації. Ім'я та значення поділяється двокрапкою, а в
+                кінці оголошення ставиться крапка з комою.
+            </p>
+            <div class="card">
+                <div class="card-header">
+                    <img src="img/jpg/info.jpg" alt="Icon">
+                    <h4>Цікаво</h4>
+                </div>
+                <div class="card-body">
+                    <p>Оголошення змінної це створення нової CSS-властивості, яка успадковується і тому доступна
+                        скрізь, оскільки будь-який елемент це нащадок елемента &lt;html&gt;.
+                    </p>
+                </div>
+            </div>
+            <h3>Використання змінної</h3>
+            <p>Для отримання доступу до значення змінної використовується вбудована функція var(), якій першим
+                аргументом передається ім'я змінної.
+            </p>
+            <div class="code-wrapper">
+                <pre id="codeSnippet" class="language-css">
+                        <code>
+            :root {
+                --brand-color: #3f51b5;
+            }
+                              
+            .section {
+                /* Інші стилі */
+                border: 2px solid var(--brand-color);
+            }
+                              
+            .section-title {
+                /* Інші стилі */
+                color: var(--brand-color);
+            }
+                              
+            .section-title::before {
+                /* Інші стилі */
+                background-color: var(--brand-color);
+            }
+                    </code>
+                </pre>
+            </div>
+            <p>Кода стало не набагато більше, але він більш гнучкий та читабельний. Якщо необхідно змінити колір бренду,
+                достатньо замінити значення змінної --brand-color і колір зміниться скрізь, де вона використовується.
+            </p>
+            <div class="card">
+                <div class="card-header">
+                    <img src="img/jpg/info.jpg" alt="Icon">
+                    <h4>Корисно</h4>
+                </div>
+                <div class="card-body">
+                    <p>CSS-змінні застосовуються не тільки для зберігання палітри кольорів проекту, в них можна
+                        зберігати будь-що. Наприклад, стандартні розміри шрифту, радіус заокруглення рамок, загальні
+                        відступи та поля, ширини контейнера, точки перелому для адаптивної верстки тощо. Тобто будь-які
+                        значення, які використовуються повторно в різних CSS-правилах.
+                    </p>
+                </div>
+            </div>
+            <h3>Резервні значення</h3>
+            <p>Функція var(ім'я_змінної, фолбек) може приймати два значення. Другий аргумент це фолбек - значення, яке
+                використовуватиметься якщо змінна, передана першим аргументом, не визначена.
+            </p>
+            <div class="code-wrapper">
+                <pre id="codeSnippet" class="language-css">
+                        <code>
+            .section {
+                border: 2px solid var(--brand-color, orange);
+            }
+                              
+            .section-title {
+                color: var(--brand-color, black);
+            }
+                              
+            .section-title::before {
+                background-color: var(--brand-color, tomato);
+            }
+                    </code>
+                </pre>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <img src="img/jpg/info.jpg" alt="Icon">
+                    <h4>Корисно</h4>
+                </div>
+                <div class="card-body">
+                    <p>Можливість передати значення за замовчуванням це насамперед можливість, а не обов'язкова вимога
+                        під час використання CSS-змінних. Немає потреби скрізь вказувати фолбек.
+                    </p>
+                </div>
+            </div>
+            <h3>Область видимості</h3>
+            <p>Змінна --brand-color глобальна, тому що визначена в root, тобто доступна в будь-якому іншому елементі.
+                Якщо значення використовуватиметься лише у певній частині сторінки, можна створювати змінні з локальною
+                областю видимості. Вони будуть доступні тільки для того елемента та його нащадків, у якому були
+                оголошені.
+            </p>
+            <div class="code-wrapper">
+                <pre id="codeSnippet" class="language-css">
+                        <code>
+            &lt;div class="alert"&gt;
+                &lt;p class="alert-text"&gt;Alert text&lt;/p&gt;
+                &lt;svg class="alert-icon"&gt;&lt;/svg&gt;
+            &lt;/div&gt;
+                    </code>
+                </pre>
+            </div>
+            <button class="prevButton">Попередня сторінка</button>
+            <button class="nextButton">Наступна сторінка</button>
+        </section>
+    </div>
+    <section class="footer">
+        <footer class="footer">
+            <p>Copyright © 2024 Всі права захищені</p>
+        </footer>
+    </section>
+    <button id="back-to-top" title="Наверх">&#9650;</button>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.8/clipboard.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,11 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    color: #5C4033;
+    background-color: #B7D7B0;
+}
+
+body.disable-scroll {
+    overflow: hidden;
+}

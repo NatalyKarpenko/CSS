@@ -1,0 +1,88 @@
+.feedback {
+    text-align: center; /* Центрирование заголовка */
+    margin-top: 100px;
+}
+
+.feedback .content {
+    text-align: center; /* Выравнивание содержимого по центру */
+    margin-bottom: 40px; /* Примените margin-bottom здесь */
+}
+
+.feedback .content h2 {
+    font-weight: 600;
+    font-size: 35px;
+    line-height: 128%;
+    color: #66273B;
+    width: 304px;
+    margin-bottom: 40px;
+    margin: 0 auto; /* Центрирование по горизонтали */
+}
+
+.review-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Выравнивание карточек по центру */
+    gap: 20px; /* Расстояние между карточками */
+    margin-left: auto; /* Выравнивание контейнера по центру */
+    margin-right: auto; /* Выравнивание контейнера по центру */
+}
+
+.review-card {
+    background-color: #EFF7EE; /* Цвет фона карточки */
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 20px; /* Отступ снизу */
+    width: 488px;
+    height: 296px;
+}
+
+.review-content p {
+    font-size: 20px; /* Размер шрифта текста отзыва */
+    color: #5C4033; /* Цвет текста отзыва */
+    margin-bottom: 30px; /* Отступ снизу */
+    text-align: center;
+}
+
+.review-image img {
+    width: 100px; /* Ширина изображения */
+    height: 100px; /* Высота изображения */
+    border-radius: 50%; /* Закругление углов изображения для создания круглой формы */
+    margin-bottom: 30px; /* Отступ снизу */
+    object-fit: cover; /* Заполнение всего пространства изображения */
+}
+
+.review-author p {
+    font-size: 20px; /* Размер шрифта текста с именем автора */
+    color: #5C4033; /* Цвет текста с именем автора */
+    text-align: center;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .feedback .content h2 {
+        font-size: 30px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .feedback {
+        margin-top: 80px;
+    }
+
+    .review-image img {
+        width: 80px;
+        height: 80px;
+        margin-bottom: 9px; /* Отступ снизу */
+    }
+
+    .review-content p {
+        font-size: 18px; /* Размер шрифта текста отзыва */
+        margin-bottom: 9px; /* Отступ снизу */
+    }
+
+    .review-card {
+        padding: 20px;
+        margin-bottom: 10px; /* Отступ снизу */
+        width: 320px;
+        height: 227px;
+    }
+}

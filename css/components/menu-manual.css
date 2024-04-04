@@ -1,0 +1,58 @@
+.menu-manual h2 {
+    font-weight: 600;
+    font-size: 45px;
+    line-height: 128%;
+    color: #66273B;
+    text-align: center; /* Центрируем текст */
+    margin: 0 auto; /* Центрирование по горизонтали */
+}
+
+.secondary-nav {
+    margin-top: 83px;
+    background-color: #EFF7EE;
+    margin-bottom: 80px;
+}
+
+.secondary-list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap; /* Разрешить перенос элементов на новую строку */
+    justify-content: space-between; /* Равномерное распределение пунктов по ширине */
+    align-items: center; /* Выравнивание по центру по вертикали */
+}
+
+.secondary-item {
+    margin-top: 60px;
+    margin-left: 80px;
+    width: 260px; /* Ширина каждого пункта меню (33.33% - отступы) */
+    margin-bottom: 40px;
+}
+
+.secondary-link {
+    text-decoration: none; /* Убираем подчеркивание */
+    color: #5C4033; /* Устанавливаем цвет текста */
+}
+
+.secondary-link.active {
+    color: #fff; /* Изменяем цвет текста для выбранного пункта меню */
+    background-color: #66273B; /* Изменяем фоновый цвет для выбранного пункта меню */
+    border-radius: 5px; /* Добавляем скругленные углы */
+    padding: 5px 10px; /* Добавляем внутренние отступы для лучшего визуального отображения */
+}
+
+
+
+
+/* Стили для пунктов меню на мобильных устройствах (ширина экрана меньше 768px) */
+@media screen and (max-width: 767px) {
+    .secondary-list {
+        justify-content: center; /* Центрируем пункты меню по горизонтали */
+    }
+
+    .secondary-item {
+        margin: 20px; /* Уменьшаем отступы между пунктами меню */
+        width: auto; /* Автоматическая ширина, чтобы элементы занимали столько места, сколько необходимо */
+        text-align: center; /* Центрируем текст внутри элемента */
+    }
+}
+
